@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "http:serve": "php -S localhost:8000",
+    "tailwind:watch": "npx tailwindcss -i ./tailwind.css -o ./index.css --watch"
+  }
+}
