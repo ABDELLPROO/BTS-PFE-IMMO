@@ -1,7 +1,3 @@
-<?php
-  echo "hello karyan nakhla ";
-?>
-
 <html>
   <head>
     <link rel="stylesheet" href="index.css">
@@ -10,6 +6,12 @@
   </head>
 
   <body>
-    <p class="text-lg text-green-500">Hello Tailwind CSS</p>
+    <?php if ($_SERVER['REQUEST_URI'] == '/'): ?>
+      <?php include './layouts/MainLayout.php'; ?>
+    <?php endif; ?>
+
+    <?php if ($_SERVER['REQUEST_URI'] == '/about'): ?>
+      <?php include './layouts/MainLayout.php'; ?>
+    <?php endif; ?>
   </body>
 </html>
