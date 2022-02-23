@@ -1,5 +1,5 @@
 <?php
-  echo "hello karyan nakhla ";
+  includes("services/auth.php");
 ?>
 
 <html>
