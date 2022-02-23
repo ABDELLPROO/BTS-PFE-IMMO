@@ -1,15 +1,19 @@
-<?php
-  echo "hello karyan nakhla ";
-?>
-
 <html>
-  <head>
-    <link rel="stylesheet" href="index.css">
 
-    <title>Home</title>
-  </head>
+<head>
+  <link rel="stylesheet" href="index.css">
+  <title>Home</title>
+</head>
 
-  <body>
-    <p class="text-lg text-green-500">Hello Tailwind CSS</p>
-  </body>
+
+<body>
+  <?php if ($_SERVER['REQUEST_URI'] == '/'): ?>
+  <?php include './layouts/MainLayout.php'; ?>
+  <?php endif; ?>
+
+  <?php if ($_SERVER['REQUEST_URI'] == '/about'): ?>
+  <?php include './layouts/MainLayout.php'; ?>
+  <?php endif; ?>
+</body>
+
 </html>
