@@ -1,5 +1,8 @@
 <?php
-  echo "hello karyan nakhla ";
+  include('config/autoload.php');
+
+  include("config/database/mysql.php");
+  $db = new MysqlDatabase();
 ?>
 
 <html>
