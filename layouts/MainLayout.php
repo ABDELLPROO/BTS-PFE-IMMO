@@ -20,6 +20,10 @@
 <?php include './pages/about.php'; ?>
 <?php endif; ?>
 
+<?php if ($_SERVER['REQUEST_URI'] == '/sign-up'): ?>
+<?php include './pages/auth/signup.php'; ?>
+<?php endif; ?>
+
 <footer class="footer__layout">
   <div class="w-24">
     <a href="#"><img src="./logo.png" /></a>

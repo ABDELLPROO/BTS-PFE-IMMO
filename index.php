@@ -14,6 +14,11 @@
   <?php if ($_SERVER['REQUEST_URI'] == '/about'): ?>
   <?php include './layouts/MainLayout.php'; ?>
   <?php endif; ?>
+
+  <?php if ($_SERVER['REQUEST_URI'] == '/sign-up'): ?>
+  <?php include './layouts/MainLayout.php'; ?>
+  <?php endif; ?>
+  
 </body>
 
 </html>
