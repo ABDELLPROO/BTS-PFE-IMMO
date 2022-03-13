@@ -1,6 +1,6 @@
 <nav class="header__layout">
   <div class="w-24">
-    <a href="#"><img src="./logo.png" /></a>
+    <a href="#"><img src="/logo.png" /></a>
   </div>
   <div class="pt-2 space-x-2 drop-shadow-md sm:hidden">
     <a class="header__link bg-blue-600 hover:bg-cyan-600 cursor-cell"
@@ -23,25 +23,11 @@
   </div>
 </nav>
 
-<?php if ($_SERVER['REQUEST_URI'] == '/'): ?>
-<?php include './pages/home.php'; ?>
-<?php endif; ?>
-
-<?php if ($_SERVER['REQUEST_URI'] == '/about'): ?>
-<?php include './pages/about.php'; ?>
-<?php endif; ?>
-
-<?php if ($_SERVER['REQUEST_URI'] == '/sign-up'): ?>
-<?php include './pages/auth/signup.php'; ?>
-<?php endif; ?>
-
-<?php if ($_SERVER['REQUEST_URI'] == '/sign-in'): ?>
-<?php include './pages/auth/signin.php'; ?>
-<?php endif; ?>
+<?php include './pages/' . $_CURRENT_ROUTE['page'] . '.php'; ?>
 
 <footer class="footer__layout">
   <div class="w-24">
-    <a href="#"><img src="./logo.png" /></a>
+    <a href="#"><img src="/logo.png" /></a>
   </div>
 
   <p class="sm:hidden">All rights reserved</p>
