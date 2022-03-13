@@ -1,22 +1,25 @@
-<?php
-  include("services/offers.php");
-
-  $offersService = new OffersService();
-  $newOffer = $offersService->addOffer("Test");
-
-  echo $newOffer['status'] 
-    ? 'Created : ' . json_encode($newOffer['data'])
-    : 'Error :' . $newOffer['error'];
-?>
-
 <html>
-  <head>
-    <link rel="stylesheet" href="index.css">
+<head>
+  <link rel="stylesheet" href="index.css">
+  <title>Home</title>
+</head>
+<body>
+  <?php if ($_SERVER['REQUEST_URI'] == '/'): ?>
+  <?php include './layouts/MainLayout.php'; ?>
+  <?php endif; ?>
 
-    <title>Home</title>
-  </head>
+  <?php if ($_SERVER['REQUEST_URI'] == '/about'): ?>
+  <?php include './layouts/MainLayout.php'; ?>
+  <?php endif; ?>
 
-  <body>
-    <p class="text-lg text-green-500">Hello Tailwind CSS</p>
-  </body>
+  <?php if ($_SERVER['REQUEST_URI'] == '/sign-up'): ?>
+  <?php include './layouts/MainLayout.php'; ?>
+  <?php endif; ?>
+
+  <?php if ($_SERVER['REQUEST_URI'] == '/sign-in'): ?>
+  <?php include './layouts/MainLayout.php'; ?>
+  <?php endif; ?>
+  
+</body>
+
 </html>
