@@ -1,0 +1,26 @@
+[
+  {
+    "uri": "/",
+    "name": "index",
+    "layout": "MainLayout",
+    "page": "home"
+  },
+  {
+    "uri": "/about",
+    "name": "about",
+    "layout": "MainLayout",
+    "page": "about"
+  },
+  {
+    "uri": "/sign-up",
+    "name": "sign-up",
+    "layout": "MainLayout",
+    "page": "auth/signup"
+  },
+  {
+    "uri": "/sign-in",
+    "name": "sign-in",
+    "layout": "MainLayout",
+    "page": "auth/signin"
+  }
+]
