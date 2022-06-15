@@ -1,14 +1,14 @@
 <nav class="header__layout">
   <div class="w-24">
-    <a href="#"><img src="./logo.png" /></a>
+    <a href="Accueil"><img src="/assets/images/logo.png" /></a>
   </div>
   <div class="pt-2 space-x-2 drop-shadow-md">
     <a class="header__link bg-blue-600 hover:bg-cyan-600 cursor-cell"
-      href="#">+ PUPLIER UNE ANNONCE</a>
+      href="publier">+ PUPLIER UNE ANNONCE</a>
     <a class="header__link bg-sky-500 hover:bg-blue-600"
-      href="#">S'inscrire</a>
+      href="sign-up">S'inscrire</a>
     <a class="header__link bg-sky-500 hover:bg-blue-600"
-      href="#">S'identifier</a>
+      href="sign-in">S'identifier</a>
   </div>
 </nav>
 
@@ -28,9 +28,36 @@
 <?php include './pages/auth/signin.php'; ?>
 <?php endif; ?>
 
+<?php if ($_SERVER['REQUEST_URI'] == '/publier'): ?>
+<?php include './pages/annonce/publier.php'; ?>
+<?php endif; ?>
+
+<?php if ($_SERVER['REQUEST_URI'] == '/Accueil'): ?>
+<?php include './pages/Accueil.php'; ?>
+<?php endif; ?>
+
+<?php if ($_SERVER['REQUEST_URI'] == '/affAnnonce'): ?>
+<?php include './pages/affAnnonce.php'; ?>
+<?php endif; ?>
+
+<?php if ($_SERVER['REQUEST_URI'] == '/admin'): ?>
+<?php include './pages/admin.php'; ?>
+<?php endif; ?>
+
+<?php if ($_SERVER['REQUEST_URI'] == '/profil'): ?>
+<?php include './pages/profil.php'; ?>
+<?php endif; ?>
+
+<?php if ($_SERVER['REQUEST_URI'] == '/connexion'): ?>
+<?php include './pages/connexion.php'; ?>
+<?php endif; ?>
+
+
+
+
 <footer class="footer__layout">
   <div class="w-24">
-    <a href="#"><img src="./logo.png" /></a>
+    <a href="Accueil"><img src="/assets/images/logo.png" /></a>
   </div>
 
   <p>All rights reserved</p>

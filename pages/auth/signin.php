@@ -1,25 +1,65 @@
-<div class="bg-bottom bg-fixed w-full py-[8.25rem] bg-[url('./photo-login.jpg')] bg-no-repeat bg-cover">
-<div class=" max-w-sm p-6 m-auto bg-white rounded-md shadow-md dark:bg-gray-600 ">
+<?php  
+   $DATABASE = new mysqli("localhost", "root", "", "pfe_immo");
+
+    session_start();
+    $formValidation = $_SESSION['FORM_VALIDATION'];
+    $_SESSION['FORM_VALIDATION'] = [];
+
+?>
+<div class="bg-bottom bg-fixed w-full py-[8.25rem] bg-[url('/assets/images/imgann.jpg')] bg-no-repeat bg-cover">
+    
+<div class=" max-w-sm p-6 m-auto mb-[31px] bg-white rounded-md shadow-md dark:bg-gray-600 ">
     <div class="flex items-center justify-between mt-4">
           <span class="w-1/5 border-b dark:border-gray-600 lg:w-1/5 border-gray-400"></span>
         <h1 class=" text-3xl from-neutral-800 text-center text-gray-700 dark:text-white ">S'IDENTIFIER</h1>
           <span class="w-1/5 border-b dark:border-gray-600 lg:w-1/5 border-gray-400"></span>
     </div>
-        <form class="mt-6">
-            <div >
-               <input type="email" name="login" placeholder="Login"
-                    class=" text-sm block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-            </div>
-            <div class="mt-6">
-               <input type="password" name="mot de passe" placeholder="Mot de passe"
-                    class=" text-sm  block w-full px-4 py-2 mt-2 text-gray-600 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
-            </div>
 
-            
-          
+        <form class="mt-6" method="POST" action='/actions/SignIn.php' >
+                                                      
+            <div >                         
+               <input type="email" name="login_signin" placeholder="Login"
+                    class=" text-sm block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
+                    
+                    <?php 
+                    if(
+                        isset($formValidation['is_valid']) &&
+                        !$formValidation['is_valid'] &&
+                        isset($formValidation['login_signin'])
+                    ):  
+                ?>   
+                <div class="flex ml-2 ">
+                <svg class=" w-5 h-5 mt-[2px] text-red-700 dark:text-blue-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                    <p class= "text-xs text-red-500 m-1">
+                        <?php echo $formValidation ['login_signin']; ?>
+                    </p>
+                    </div>    
+                <?php endif; ?>
+                
+                </div>
+            <div class="mt-6">
+               <input type="password" name="password_signin" placeholder="password login"
+                    class=" text-sm  block w-full px-4 py-2 mt-2 text-gray-600 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
+                    <?php 
+                    if(
+                        isset($formValidation['is_valid']) &&
+                        !$formValidation['is_valid'] &&
+                        isset($formValidation['password_signin'])
+                    ):  
+                ?>
+                   <div class="flex ml-2 ">
+                    <svg class=" w-5 h-5 mt-[2px] text-red-700 dark:text-blue-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                    <p class="text-xs text-red-500 m-1">
+                        <?php echo $formValidation['password_signin']; ?>
+                    </p>
+                    </div> 
+                <?php endif; ?>
+               
+                </div>
+
             <div class="mt-5">
-                <button
-                    class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
+                <button id="btn"
+                   name="valide" class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
                     SE CONNECTER
                 </button>
             </div>
@@ -48,7 +88,8 @@
             
         </div  class="mt-4">
 
-        <p class="mt-4 text-xs font-light text-center text-gray-400"> Vous n'avez pas de compte ? <a href="#"
+        <p class="mt-4 text-xs font-light text-center text-gray-400"> Vous n'avez pas de compte ? <a href="sign-up"
                 class="font-medium text-gray-700 dark:text-gray-200 hover:underline"> Créer une </a></p>
 </div>
+
 </div>

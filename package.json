@@ -1,9 +1,12 @@
 {
   "scripts": {
     "http:serve": "php -S localhost:8000",
-    "tailwind:watch": "npx tailwindcss -i ./tailwind.css -o ./index.css --watch"
+    "tailwind:watch": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/index.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.23"
+  },
+  "dependencies": {
+    "tiny-slider": "^2.9.4"
   }
 }
