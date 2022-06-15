@@ -146,18 +146,6 @@ rightA.addEventListener('click', function(){
 });
 
 
-//slide annonce
-  const slider1 = document.querySelector('#slider1');
-
-  const leftann = document.querySelector('#slideleft');
-  const rightann = document.querySelector('#slideright');
-
-
-
- rightann.addEventListener('click', function(){
- 
-  slider1.style.transform = 'translate('+ -25 + '%)';//-90.77
-});
 
 
 
