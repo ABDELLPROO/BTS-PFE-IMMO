@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 //global $DATABASE;
 $DATABASE = new mysqli("localhost", "root", "", "pfe_immo");
@@ -69,4 +70,8 @@ $DATABASE = new mysqli("localhost", "root", "", "pfe_immo");
     
     header('location:http://localhost:8000/Accueil');
 }
+
+
+
+
 ?>
